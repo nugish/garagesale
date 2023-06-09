@@ -1,3 +1,3 @@
-module github.com/nugish/garagsale
+module github.com/nugish/garagesale
 
 go 1.20
