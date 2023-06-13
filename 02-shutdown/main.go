@@ -84,5 +84,5 @@ func Echo(w http.ResponseWriter, r *http.Request) {
 	// Simulate a long running request.
 	time.Sleep(3 * time.Second)
 
-	fmt.Fprintf(w, "Hello from %s! You asked to %s %s\n", r.Method, r.URL.Path)
+	fmt.Fprintf(w, "You asked to %s %s\n", r.Method, r.URL.Path)
 }
