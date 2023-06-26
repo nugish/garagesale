@@ -1,0 +1,24 @@
+version: '3.8'
+
+networks:
+  shared-network:
+    driver: bridge
+
+services:
+  database:
+    container_name: sales_db
+    networks:
+      shared-network:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: garagesale
+      POSTGRES_PASSWORD: mypassword1223
+      POSTGRES_DB: garagesale
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-db:/data/postgres
+    ports:
+      - "5432:5432"
+volumes:
+  postgres-db:
+    driver: local
